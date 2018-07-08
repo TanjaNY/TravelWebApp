@@ -1,26 +1,22 @@
-{% block doc %}
-
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
       
-{% block metas %}
- 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-{% endblock metas %}
+
 
     <title>GWU BootCamp Project02</title>
 
-{% block styles %}
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css')}}">  
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css')}}">
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/landing-page.min.css')}}" rel="stylesheet" type="text/css">
-{% endblock styles %}
+
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css'">
+<link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css">  
+<link rel="stylesheet" type="text/css" href="vendor/simple-line-icons/css/simple-line-icons.css">
+<link rel="stylesheet" type="text/css" href="css/landing-page.min.css" rel="stylesheet" type="text/css">
+
 
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -142,7 +138,7 @@
           <div class="col-lg-12 my-auto showcase-text">
 
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Tweets about DC Airports</a></p>
-            {% for item in datat %}
+            
             <table class="table">
                 <thead>
                   <tr>
@@ -154,7 +150,7 @@
               </table>
   
               
-            {% endfor %}
+            
           
           </div>
         </div>

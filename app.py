@@ -20,8 +20,8 @@ bootstrap = Bootstrap(app)
 
 conn = 'mongodb://localhost:27017'
 client = pymongo.MongoClient(conn)
-q = Queue(connection=conn)
-result = q.enqueue(count_words_at_url, 'http://heroku.com')
+#q = Queue(connection=conn)
+#result = q.enqueue(count_words_at_url, 'http://heroku.com')
 
 
 # Pass connection to the pymongo instance.
@@ -40,14 +40,7 @@ tweets=db.twitter
 @app.route('/')
 def index():
     
-    datat =db.tweets.find()
-      
-    
-    
-        
-    print(datat)
-    
-    
+    datat =list(db.tweets.find())
     
     
     return render_template("index.html", datat=datat)
@@ -60,17 +53,17 @@ def index():
 @app.route("/scrape")
 def scrape():
     
-    #entries = mongo.db.mission_to_mars
-    tweet_info = tweets.scrape_tweets()
+    datat = db.tweets
+    tweet_info = Tweeter_extractor.scrape_tweets()
     
     
      # Run scraped functions
     
-    url='https://tanjany.github.io/GWU-Bootcamp-Project02'
     
+    url="https://tanjany.github.io/GWU-Bootcamp-Project02/"
     
      # Redirect back to home page 
-    return redirect(url, code=307)
+    return redirect(url, code=302)
 
 
 if __name__ == "__main__":

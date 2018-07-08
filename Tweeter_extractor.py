@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import tweepy
 import json
 from pymongo import MongoClient
@@ -33,15 +27,15 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, parser=tweepy.parsers.JSONParser(),wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 
-
 # In[2]:
 
+def scrape_tweets(): 
+    target_terms = ("@Reagan_Airport", "@NorfolkAirport","@Dulles_Airport", "@BWI_Airport",\
+                    "@Flack4RIC","@PHLAirport","@FlyHIA")
+    for target in target_terms:
+        oldest_tweet = None
+        public_tweets = api.search(target,count=5,max_id=oldest_tweet,tweet_mode='extended')
+        for tweet in public_tweets['statuses']:
+            tweets.insert_one(tweet)
 
-target_terms = ("@Reagan_Airport", "@NorfolkAirport","@Dulles_Airport", "@BWI_Airport",
-                "@Flack4RIC", "@PHLAirport", "@FlyHIA")
-for target in target_terms:
-    oldest_tweet = None
-    public_tweets = api.search(target,count=5,max_id=oldest_tweet,tweet_mode='extended')
-    for tweet in public_tweets['statuses']:
-        tweets.insert_one(tweet)
-
+        

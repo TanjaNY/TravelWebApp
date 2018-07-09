@@ -45,8 +45,8 @@
         <div class="overlay"></div>
         <div class="container">
           <div class="row">
-            <div class="col-xl-9 mx-auto">
-              <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+            <div class="col-xl-12 mx-auto">
+              <h1 class="mb-5">DC Airports</h1>
             </div>
    
               
@@ -126,7 +126,7 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters">
 
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image">
             <iframe src="https://www.google.com/maps/d/embed?mid=1XfP8ULzD9DnPOtxyQmaokPCh3RIYaAWQ" width="640" height="480"></iframe>
           </div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
@@ -134,32 +134,33 @@
             <h2>DC Airports</h2>
             <p class="lead mb-0"> There are three airports in DC Metro Area: Dulles International Airport (IAD)
               Ronald Reagan Washington National Airport (DCA)
-              Baltimore/Washington International Thurgood Marshall Airport (BWI). Four other big airports could be used for flight from and to DC. We want to take a closer look at all seven.  </p>
+              Baltimore/Washington International Thurgood Marshall Airport (BWI). Four other big airports could be used for flight from and to DC. We want to take a closer look at all seven.The responsive image right is a map where we can calculate the distance bewtween you and the airport.  </p>
           </div>
         </div>
         <div class="row no-gutters">
-          
-          <div class="col-lg-12 my-auto showcase-text">
-
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Tweets about DC Airports</a></p>
+            <div class="container-fluid">
+                <div class="jumbotron text-center">
+              <h3>What people are tweeting about DC airports?</h3>
+              <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">get last tweets</a></p>
+            
+        
             {% for item in datat %}
             <table class="table">
-                <thead>
+                <tbody>
                   <tr>
-                      <th scope=""><li> {{item.full_text}} </li></th>
-  
-  
+                      <td> {{item.created_at[:10]}}</td>
+                      <td>{{item.full_text}}</td> 
                   </tr>        
                 </tbody>
               </table>
   
               
             {% endfor %}
-          
+           </div>
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" );"></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2>Easy to Use &amp; Customize</h2>
             <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
@@ -175,23 +176,23 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
+              <img class="img-fluid rounded-circle mb-3" src="https://tanjany.github.io/GWU-Bootcamp-Project02/img/testimonials-1.jpg" alt="">
               <h5>Tanja Nyberg</h5>
-              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+              
             </div>
           </div>
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+              <img class="img-fluid rounded-circle mb-3" src="https://tanjany.github.io/GWU-Bootcamp-Project02/img/testimonials-2.jpg" alt="">
               <h5>Haiyan Richter</h5>
-              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+              
             </div>
           </div>
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+              <img class="img-fluid rounded-circle mb-3" src="/https://tanjany.github.io/GWU-Bootcamp-Project02/img/testimonials-3.jpg" alt="">
               <h5>Melizanne Santos-Abanilla</h5>
-              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+              
             </div>
           </div>
         </div>

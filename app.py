@@ -33,7 +33,7 @@ db =client.twitter
 
 tweets=db.twitter
 
-#db.tweets.drop()
+db.tweets.drop()
 
 
 
@@ -53,18 +53,19 @@ def index():
 @app.route("/scrape")
 def scrape():
     
+    
     datat = db.tweets
     tweet_info = Tweeter_extractor.scrape_tweets()
     
-    
+    print(tweet_info)
      # Run scraped functions
     
     
-    url="https://tanjany.github.io/GWU-Bootcamp-Project02/"
+    #url="https://tanjany.github.io/GWU-Bootcamp-Project02/"
     
      # Redirect back to home page 
-    return redirect(url, code=302)
-
+    #return redirect(url, code=302)
+    return redirect("http://localhost:5000/", code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)

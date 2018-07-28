@@ -61,7 +61,7 @@ def scrape():
      # Run scraped functions
     
     
-    url="https://tanjany.github.io/GWU-Bootcamp-Project02/index.html"
+    url="https://github.com/TanjaNY/GWU-Bootcamp-Project02/tree/master/templates"
     
      # Redirect back to home page 
     return redirect(url, code=302)

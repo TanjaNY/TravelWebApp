@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 
-conn = 'mongodb://tanja.nyberg%40outlook.com:Griesheim2002%40ds259241.mlab.com:59241/heroku_18k0ln37'
+conn = 'mongodb://tanja.nyberg%40outlook.com%3AGriesheim2002%40ds259241.mlab.com%3A59241/heroku_18k0ln37'
 client = pymongo.MongoClient(conn)
 
 

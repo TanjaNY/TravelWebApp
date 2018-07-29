@@ -8,7 +8,7 @@ from bson.objectid import ObjectId
 import Tweeter_extractor
 from flask_bootstrap import Bootstrap
 from rq import Queue
-from worker import conn
+from worker import conn1
 from utils import count_words_at_url
 
 
@@ -20,8 +20,8 @@ bootstrap = Bootstrap(app)
 
 conn = 'mongodb://localhost:27017'
 client = pymongo.MongoClient(conn)
-#q = Queue(connection=conn)
-#result = q.enqueue(count_words_at_url, 'http://heroku.com')
+q = Queue(connection=conn1)
+result = q.enqueue(count_words_at_url, 'http://heroku.com')
 
 
 # Pass connection to the pymongo instance.

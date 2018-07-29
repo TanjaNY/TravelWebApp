@@ -10,7 +10,7 @@ from config import (consumer_key,
                     access_token, 
                     access_token_secret)
 
-conn = "mongodb://localhost:27017"
+conn = "mongodb://<dbuser>:<dbpassword>@ds259241.mlab.com:59241/heroku_18k0ln37"
 client = pymongo.MongoClient(conn)
 
 # Select database and collection to use

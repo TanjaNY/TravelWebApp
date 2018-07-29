@@ -7,7 +7,7 @@ from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
 import Tweeter_extractor
 from flask_bootstrap import Bootstrap
-import from config (user,password)
+from config import(user,password)
 
 
 

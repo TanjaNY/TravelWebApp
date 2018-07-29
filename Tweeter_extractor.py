@@ -10,7 +10,7 @@ from config import (consumer_key,
                     access_token, 
                     access_token_secret)
 
-conn = "mongodb://<tanja.nyberg%40outlook.com>:<Griesheim2002>%40ds259241.mlab.com:59241/heroku_18k0ln37"
+conn = "mongodb%3A%2F%2F%3Ctanja.nyberg%2540outlook.com%3E%3A%3CGriesheim2002%3E%2540ds259241.mlab.com%3A59241%2Fheroku_18k0ln37"
 client = pymongo.MongoClient(conn)
 
 # Select database and collection to use

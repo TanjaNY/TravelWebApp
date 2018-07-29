@@ -7,6 +7,7 @@ from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
 import Tweeter_extractor
 from flask_bootstrap import Bootstrap
+import from config (user,password)
 
 
 
@@ -16,7 +17,7 @@ app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 
-conn = 'mongodb://frouwa:17Apr2012%40ds259241.mlab.com:59241/heroku_18k0ln37'
+conn = 'mongodb://[user:password]%40ds259241.mlab.com:59241/heroku_18k0ln37'
 client = pymongo.MongoClient(conn)
 
 

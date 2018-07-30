@@ -5,7 +5,7 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
-#import Tweeter_extractor
+import Tweeter_extractor
 from flask_bootstrap import Bootstrap
 from config import(user,password)
 
@@ -17,8 +17,8 @@ app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 
-#conn = "mongodb://heroku_18k0ln37:37bopnvbsp6j523o8r81lpfuvb@ds259241.mlab.com:59241/heroku_18k0ln37"
-#client = pymongo.MongoClient(conn)
+conn = "mongodb://heroku_18k0ln37:37bopnvbsp6j523o8r81lpfuvb@ds259241.mlab.com:59241/heroku_18k0ln37"
+client = pymongo.MongoClient(conn)
 
 
 # Pass connection to the pymongo instance.
@@ -26,18 +26,18 @@ bootstrap = Bootstrap(app)
 
 
 # Connect to a database. Will create one if not already available.
-#db =client.twitter
+db =client.heroku_18k0ln37
 
-#tweets=db.twitter
+tweets=db.heroku_18k0ln37
 
-#db.tweets.drop()
+db.tweets.drop()
 
 
 
 @app.route('/')
 def index():
     
-    #datat =list(db.tweets.find())
+    datat =list(db.tweets.find())
     
     
     return render_template("index.html")
@@ -47,14 +47,14 @@ def index():
 
    
 
-#@app.route("/scrape")
-#def scrape():
+@app.route("/scrape")
+def scrape():
     
     
-    #datat = db.tweets
-   # tweet_info = Tweeter_extractor.scrape_tweets()
+    datat = db.tweets
+    tweet_info = Tweeter_extractor.scrape_tweets()
     
-    #print(tweet_info)
+    print(tweet_info)
      # Run scraped functions
     
     

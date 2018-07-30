@@ -5,7 +5,7 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
-import Tweeter_extractor
+#import Tweeter_extractor
 from flask_bootstrap import Bootstrap
 from config import(user,password)
 

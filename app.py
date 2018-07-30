@@ -58,7 +58,7 @@ def scrape():
      # Run scraped functions
     
     
-    url="https://tanjany.github.io/GWU-Bootcamp-Project02/"
+    url="https://dry-hamlet-93066.herokuapp.com/"
     
      # Redirect back to home page 
     return redirect(url, code=302)

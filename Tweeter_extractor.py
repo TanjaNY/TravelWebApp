@@ -30,7 +30,7 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser(),wait_on_rate_limit=Tru
 # In[2]:
 
 def scrape_tweets(): 
-    db.tweets.drop()
+    #db.tweets.drop()
     target_terms = ("@Reagan_Airport", "@NorfolkAirport","@Dulles_Airport", "@BWI_Airport",\
                     "@Flack4RIC","@PHLAirport","@FlyHIA")
     for target in target_terms:

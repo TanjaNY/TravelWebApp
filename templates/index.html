@@ -141,20 +141,16 @@
             <div class="container-fluid">
                 <div class="jumbotron text-center">
               <h3>What people are tweeting about DC airports?</h3>
-             <p><a class="btn btn-primary btn-lg" href="app.py" role="button">Tweets about DC Airports</a></p>
-            {% for item in datat %}
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Tweets about DC Airports</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">get last tweets</a></p>
             
-            <table class="table">
-                <thead>
-                  <tr>
-                      <th scope=""><li> {{item.full_text}} </li></th>
-  
-  
-                  </tr>        
-                </tbody>
-              </table>
-  
+        
+            {% for item in datat %}
+            <li>
+                       {{item.created_at[:10]}}:
+                      {{item.full_text}} 
+            </li>
+              
+            {% endfor %}
               
            </div>
           </div>

@@ -11,7 +11,7 @@ from config import (consumer_key,
                     access_token_secret)
 from config import(user,password)
 
-conn = "mongodb://[user:password@]ds259241.mlab.com:59241/heroku_18k0ln37"
+conn = PROD_MONGODB
 client = pymongo.MongoClient(conn)
 
 # Select database and collection to use

@@ -155,7 +155,7 @@
             {% endfor %}
                   
            <div class="chart"></div>
-           <script src="app.js"></script> 
+            
               
            </div>
           </div>
@@ -164,7 +164,9 @@
           <div class="col-lg-6 order-lg-2 text-white showcase-img" );"></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
            <div class="chart"></div>
-           <script src="app.js"></script>            
+          {% block scripts %}
+          <script src="{{url_for('.static', filename='app.js')}}"></script> 
+          {% endblock scripts %}
           </div>
         </div>
       </div>

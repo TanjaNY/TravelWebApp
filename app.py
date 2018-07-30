@@ -37,7 +37,7 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 def index():
     
-    datat =list(db.tweets.find())
+    #datat =list(db.tweets.find())
     
     
     return render_template("index.html", datat=datat)

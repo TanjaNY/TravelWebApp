@@ -17,8 +17,8 @@ app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 
-conn = "mongodb://heroku_18k0ln37:37bopnvbsp6j523o8r81lpfuvb@ds259241.mlab.com:59241/heroku_18k0ln37"
-client = pymongo.MongoClient(conn)
+#conn = "mongodb://heroku_18k0ln37:37bopnvbsp6j523o8r81lpfuvb@ds259241.mlab.com:59241/heroku_18k0ln37"
+#client = pymongo.MongoClient(conn)
 
 
 # Pass connection to the pymongo instance.
@@ -26,11 +26,11 @@ client = pymongo.MongoClient(conn)
 
 
 # Connect to a database. Will create one if not already available.
-db =client.twitter
+#db =client.twitter
 
-tweets=db.twitter
+#tweets=db.twitter
 
-db.tweets.drop()
+#db.tweets.drop()
 
 
 
@@ -47,14 +47,14 @@ def index():
 
    
 
-@app.route("/scrape")
-def scrape():
+#@app.route("/scrape")
+#def scrape():
     
     
-    datat = db.tweets
-    tweet_info = Tweeter_extractor.scrape_tweets()
+    #datat = db.tweets
+   # tweet_info = Tweeter_extractor.scrape_tweets()
     
-    print(tweet_info)
+    #print(tweet_info)
      # Run scraped functions
     
     

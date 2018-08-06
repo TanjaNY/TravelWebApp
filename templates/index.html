@@ -161,11 +161,15 @@
           </div>
         </div>
       <div class="chart"></div>
+        
+        {% block javascript %}
           
        <script src="{{url_for('.static', filename='app.js')}}"></script>
-         
- 
-          
+        
+        {% endblock %}
+        
+        
+                
           
        
       </div>

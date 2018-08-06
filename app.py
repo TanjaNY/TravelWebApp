@@ -22,13 +22,16 @@ client = pymongo.MongoClient(conn)
 
 
 # Pass connection to the pymongo instance.
+conn = "mongodb://heroku_18k0ln37:37bopnvbsp6j523o8r81lpfuvb@ds259241.mlab.com:59241/heroku_18k0ln37"
+client = pymongo.MongoClient(conn)
+
+# Select database and collection to use
+db = client.heroku_18k0ln37
+
+tweets = db.heroku_18k0ln37
 
 
 
-# Connect to a database. Will create one if not already available.
-db =client.heroku_18k0ln37
-
-tweets=db.heroku_18k0ln37
 
 db.tweets.drop()
 

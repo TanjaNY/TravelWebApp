@@ -52,7 +52,7 @@ def scrape():
     
     
     datat = db.tweets
-    #tweet_info = Tweeter_extractor.scrape_tweets()
+    datat= Tweeter_extractor.scrape_tweets()
     
     #print(tweet_info)
      # Run scraped functions

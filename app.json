@@ -1,0 +1,37 @@
+{
+  "name": "GWU-Bootcamp-Project02",
+  "scripts": {
+  },
+  "env": {
+    "MONGODB_URI": {
+      "required": true
+    },
+    "MONGOLAB_CYAN_URI": {
+      "required": true
+    },
+    "PROD_MONGODB": {
+      "required": true
+    },
+    "REDISTOGO_URL": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "mongolab",
+    "mongolab",
+    "redistogo"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

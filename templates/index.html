@@ -147,10 +147,9 @@
             
         
             {% for item in datat %}
-            <li>
-                      {{item.created_at[:10]}}:
-                      {{item.full_text}} 
-            </li>
+                  
+             <li><a href="{{item.created_at[:10]}}:{{item.full_text}}"</a></li>
+           
               
             {% endfor %}
                   

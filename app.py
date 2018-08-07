@@ -61,7 +61,7 @@ def scrape():
      # Run scraped functions
     
     
-    url="https://dry-hamlet-93066.herokuapp.com"
+    url="https://statairport.herokuapp.com/"
     
      # Redirect back to home page 
     return redirect(url, code=302)

@@ -16,7 +16,7 @@ client = pymongo.MongoClient(conn)
 # Select database and collection to use
 db = client.heroku_g12ldwwq
 
-tweet = db.tweets
+collection = db.tweets
 
 
 

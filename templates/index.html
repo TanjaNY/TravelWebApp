@@ -143,12 +143,11 @@
             <div class="container-fluid">
                 <div class="jumbotron text-center">
               <h3>What people are tweeting about DC airports?</h3>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">get last tweets</a></p>
             
         
             {% for item in datat %}
                   
-             <li><a href="{{item.full_text}}"</a></li>
+             <li><a href="{{item.full_text}}"/a></li>
            
               
             {% endfor %}

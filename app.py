@@ -45,9 +45,22 @@ def index():
     
     return render_template("index.html")
 
+@app.route("/scrape")
+def scrape():
+    
+    
+    datat = db.tweets
+    tweet_info=Tweeter_extractor.scrape_tweets()
+    
+    print(tweet_info)
+     # Run scraped functions
+    
+    
+    url="https://statairport.herokuapp.com/"
+
  
 
-    url="https://statairport.herokuapp.com/"
+   
     
      # Redirect back to home page 
     return redirect(url, code=302)

@@ -27,7 +27,7 @@ client = pymongo.MongoClient(conn)
 # Select database and collection to use
 db = client.heroku_g12ldwwq
 
-tweet = db.tweets
+collection = db.tweets
 
 
 
@@ -45,22 +45,8 @@ def index():
     
     return render_template("index.html")
 
+ 
 
-
-
-   
-
-@app.route("/scrape")
-def scrape():
-    
-    
-    datat = db.tweets
-    tweet_info=Tweeter_extractor.scrape_tweets()
-    
-    print(tweet_info)
-     # Run scraped functions
-    
-    
     url="https://statairport.herokuapp.com/"
     
      # Redirect back to home page 

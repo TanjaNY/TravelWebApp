@@ -14,7 +14,7 @@ conn = "mongodb://heroku_g12ldwwq:e0kpf37iu52licms2rmqo1ajr2@ds113826.mlab.com:1
 client = pymongo.MongoClient(conn)
 
 # Select database and collection to use
-db = client.heroku_18k0ln37
+db = client.heroku_g12ldwwq
 
 tweet = db.tweets
 

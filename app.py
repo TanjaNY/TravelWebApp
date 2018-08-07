@@ -40,6 +40,7 @@ db.tweets.drop()
 def index():
     
     datat =list(db.tweets.find())
+    print(datat)
     
     
     return render_template("index.html")

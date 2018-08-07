@@ -32,7 +32,7 @@ tweet = db.tweets
 
 
 
-db.tweets.drop()
+#db.tweets.drop()
 
 
 

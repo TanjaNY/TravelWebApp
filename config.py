@@ -1,8 +1,7 @@
 
-consumer_key="YKc0dvSKFNCA8wwKcfIo2tqCN"
-consumer_secret="wOEfYKrBmlDR1GpPFgmUEutbghZ9eO4EEsj8ybWvdnjk0TH9Jb"
-access_token="987885617043464192-VUvqIm9EFGrIXIYPcQqnsVWDcQLVUBF"
-access_token_secret="9Oq1DKFDS0btGZ1UxTAiCjwLMFb8uN6Got82L6QDPXZkm"
-user="frouwa"
-password="17Apr2012"
+consumer_key="W7eaDLpDVy8TjhpLioP2gddED"
+consumer_secret="9twochzAihnsaMTWwbEyICwkVHGInkFgsiXadSG4p5jskWba1Y"
+access_token="987885617043464192-f7jBC47kNQ4gGcMyLBzRv9sD5GLC13R"
+access_token_secret="kNASDSEaz7zp5yL0FjdgNs04CsQgM0GmqoWmsZidAxWmA"
+
 

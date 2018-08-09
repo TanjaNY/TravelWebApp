@@ -67,10 +67,10 @@ def scrape():
         for tweet in public_tweets['statuses']:
             tweets.insert_one(tweet)
     
-    #datat = db.tweets
-    #tweet_info=Tweeter_extractor.scrape_tweets()
+        datat = db.tweets
+        #tweet_info=Tweeter_extractor.scrape_tweets()
     
-    #print(tweet_info)
+       print(datat)
      # Run scraped functions
     
     

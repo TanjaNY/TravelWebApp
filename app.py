@@ -5,9 +5,17 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
-import Tweeter_extractor
 from flask_bootstrap import Bootstrap
 from config import(user,password)
+import tweepy
+import json
+from bson.json_util import dumps
+
+# Twitter API Keys
+from config import (consumer_key, 
+                    consumer_secret, 
+                    access_token, 
+                    access_token_secret)
 
 
 
@@ -34,7 +42,9 @@ collection = db.tweets
 
 db.tweets.drop()
 
-
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth, parser=tweepy.parsers.JSONParser(),wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 
 @app.route('/')
 def index():
@@ -46,13 +56,21 @@ def index():
     return render_template("index.html")
 
 @app.route("/scrape")
-def scrape():
+   
+def scrape(): 
+    db.tweets.drop()
+    target_terms = ("@Reagan_Airport", "@NorfolkAirport","@Dulles_Airport", "@BWI_Airport",\
+                    "@Flack4RIC","@PHLAirport","@FlyHIA")
+    for target in target_terms:
+        oldest_tweet = None
+        public_tweets = api.search(target,count=2,max_id=oldest_tweet,tweet_mode='extended')
+        for tweet in public_tweets['statuses']:
+            tweets.insert_one(tweet)
     
+    #datat = db.tweets
+    #tweet_info=Tweeter_extractor.scrape_tweets()
     
-    datat = db.tweets
-    tweet_info=Tweeter_extractor.scrape_tweets()
-    
-    print(tweet_info)
+    #print(tweet_info)
      # Run scraped functions
     
     

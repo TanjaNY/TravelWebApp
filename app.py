@@ -6,7 +6,6 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
 from flask_bootstrap import Bootstrap
-from config import(user,password)
 import tweepy
 import json
 from bson.json_util import dumps

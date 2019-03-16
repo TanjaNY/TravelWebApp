@@ -20,7 +20,7 @@ from config import (consumer_key,
 
 
 # create instance of Flask app
-app = Flask(__name__)
+#app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 
@@ -67,7 +67,7 @@ def scrape():
             tweets.insert_one(tweet)
     
         datat = db.tweets
-        tweet_info=Tweeter_extractor.scrape_tweets()
+       # tweet_info=Tweeter_extractor.scrape_tweets()
     
         print(datat)
      # Run scraped functions

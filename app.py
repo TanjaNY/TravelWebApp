@@ -39,7 +39,7 @@ collection = db.tweets
 
 
 
-db.tweets.drop()
+#db.tweets.drop()
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -57,7 +57,7 @@ def index():
 @app.route("/scrape")
    
 def scrape(): 
-    db.tweets.drop()
+   # db.tweets.drop()
     target_terms = ("@Reagan_Airport", "@NorfolkAirport","@Dulles_Airport", "@BWI_Airport",\
                     "@Flack4RIC","@PHLAirport","@FlyHIA")
     for target in target_terms:

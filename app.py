@@ -39,7 +39,7 @@ collection = db.tweets
 
 
 
-#db.tweets.drop()
+db.tweets.drop()
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -67,9 +67,9 @@ def scrape():
             tweets.insert_one(tweet)
     
         datat = db.tweets
-        #tweet_info=Tweeter_extractor.scrape_tweets()
+        tweet_info=Tweeter_extractor.scrape_tweets()
     
-        #print(datat)
+        print(datat)
      # Run scraped functions
     
     

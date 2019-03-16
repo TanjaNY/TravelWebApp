@@ -49,10 +49,10 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser(),wait_on_rate_limit=Tru
 def index():
     
     datat =list(db.tweets.find())
-    print(datat)
+  #  print(datat)
     
     
-    return render_template("index.html")
+    return render_template("index.html", datat=datat))
 
 @app.route("/scrape")
    

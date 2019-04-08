@@ -5,83 +5,69 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient # Database connector
 from bson.objectid import ObjectId
+import Tweeter_extractor
 from flask_bootstrap import Bootstrap
-import tweepy
-import json
-from bson.json_util import dumps
-
-# Twitter API Keys
-from config import (consumer_key, 
-                    consumer_secret, 
-                    access_token, 
-                    access_token_secret)
-
-
-
+from config import (database_user,
+                   database_pass,
+                   databasename)
+#C:\path\to\app>set FLASK_APP=app.py
+#flask run
+#Open your browser. Go to http://127.0.0.1:5000/
 
 # create instance of Flask app
-#app = Flask(__name__)
+app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 
+#conn = 'mongodb://localhost:27017'
+
+conn ='mongodb://celasson:Yorktown2008@ds157895.mlab.com:57895/heroku_g12ldwwq'
+client = pymongo.MongoClient(conn)
 
 
 
 # Pass connection to the pymongo instance.
-conn = "mongodb://heroku_g12ldwwq:e0kpf37iu52licms2rmqo1ajr2@ds113826.mlab.com:13826/heroku_g12ldwwq"
-client = pymongo.MongoClient(conn)
-
-# Select database and collection to use
-db = client.heroku_g12ldwwq
-
-collection = db.tweets
 
 
+
+# Connect to a database. Will create one if not already available.
+db =client.heroku_g12ldwwq
+
+collection=db.tweets
 
 
 #db.tweets.drop()
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth, parser=tweepy.parsers.JSONParser(),wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
+
 
 @app.route('/')
 def index():
     
-    datat =list(db.tweets.find())
-  #  print(datat)
+    docs = list(db.tweets.find())
+ 
     
-    
-    return render_template("index.html", datat=datat))
+    return render_template("index.html", docs=docs)
+
+
+
+
+   
 
 @app.route("/scrape")
-   
-def scrape(): 
-   # db.tweets.drop()
-    target_terms = ("@Reagan_Airport", "@NorfolkAirport","@Dulles_Airport", "@BWI_Airport",\
-                    "@Flack4RIC","@PHLAirport","@FlyHIA")
-    for target in target_terms:
-        oldest_tweet = None
-        public_tweets = api.search(target,count=2,max_id=oldest_tweet,tweet_mode='extended')
-        for tweet in public_tweets['statuses']:
-            tweets.insert_one(tweet)
+def scrape_tweets():
     
-        datat = db.tweets
-       # tweet_info=Tweeter_extractor.scrape_tweets()
+    #entries = mongo.db.mission_to_mars
+    tweet_info = mongo.db.tweets.scrape_tweets()
     
-        print(datat)
+    
      # Run scraped functions
     
+   # url='https://tanjany.github.io/GWU-Bootcamp-Project02'
     
-    url="https://statairport.herokuapp.com/"
-
- 
-
-   
     
      # Redirect back to home page 
-    return redirect(url, code=302)
-    #return redirect("http://localhost:5000/", code=302)
+   # return redirect(url, code=307)
+    return redirect("http://localhost:5000/", code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)

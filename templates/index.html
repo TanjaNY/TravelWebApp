@@ -13,26 +13,24 @@
     <meta name="author" content="">
 {% endblock metas %}
 
-    <title>GWU BootCamp Project02</title>
+    <title>ALL DC AIRPORTS</title>
 
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css')}}">  
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css')}}">
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/landing-page.min.css')}}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">    
 {% endblock styles %}
 
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
   
 
   </head>
 
   <body>
 
-    <!-- Navigation -->
+    <!-- Navigation 
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="#">Data Visualization - George Washington Arlington Campus February 2018 Cohort
@@ -40,7 +38,7 @@
           </a>
         
       </div>
-    </nav>
+    </nav>-->
 
     <!-- Masthead -->
     <header class="masthead text-white text-center">
@@ -48,7 +46,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xl-12 mx-auto">
-              <h1 class="mb-5">DC Airports</h1>
+              <h1 class="mb-5">DC AIRPORTS</h1>
             </div>
    
               
@@ -69,9 +67,9 @@
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
+                <i class="icon-check m-auto text-primary"></i>
               </div>
-              <h3>DC Metro Airports</h3>
+              <h3>DC Metro Main Airports</h3>
               <p class="lead mb-0">
                 There are three big airports in DC Metro Area: 
                   </p>
@@ -85,7 +83,7 @@
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
+                <i class="icon-check m-auto text-primary"></i>
               </div>
               <h3> DC alternate Airports</h3>
               <p class="lead mb-0">Four other big airports could be used for flight from and to DC.
@@ -98,7 +96,7 @@
                     </ul>
             </div>
           </div>
-          <div class="col-lg-4">
+          <!--div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
                 <i class="icon-check m-auto text-primary"></i>
@@ -118,7 +116,7 @@
 
                       </li>
             </div>
-          </div>
+          </div-->
         </div>
       </div>
     </section>
@@ -128,56 +126,58 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters">
 
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image">
-            <iframe src="https://www.google.com/maps/d/u/1/embed?mid=176WTPtWdklBI2tt7ZL0C8nftize1hhsD" width="640" height="480"></iframe>>
-           </div>
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('static/img/bg-showcase-1.jpg');">
+            <iframe src="https://www.google.com/maps/d/embed?mid=176WTPtWdklBI2tt7ZL0C8nftize1hhsD" width="640" height="480"></iframe>
+          </div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             
             <h2>DC Airports</h2>
             <p class="lead mb-0"> There are three airports in DC Metro Area: Dulles International Airport (IAD)
               Ronald Reagan Washington National Airport (DCA)
-              Baltimore/Washington International Thurgood Marshall Airport (BWI). Four other big airports could be used for flight from and to DC. We want to take a closer look at all seven.The responsive image right is a map where we can calculate the distance bewtween you and the airport.  </p>
+              Baltimore/Washington International Thurgood Marshall Airport (BWI). Four other big airports could be used for flight from and to DC. In the right window you can see an interactive map where you can calculate the distance from you to all seven airports.  </p>
           </div>
         </div>
         
-   
-                
+        <div class="row no-gutters">
           
-       
-      </div>
-    </section>
+        <div class="col-lg-12 order-lg-1 my-auto showcase-text">
+          <div class="container-fluid">     
+            <h2>What people are talking about</h2>
+            <ul style="list-style: none;">
+                <p class="lead mb-0"> {% for it in docs %}
+             <li> Twitted at {{ it.created_at }} 
+                <br>Twitter user {{ it.user.screen_name }} from {{ it.user.location }} writes : 
+                <br><p> <b> {{ it.full_text }} </b></p>
+                <a href ="https://twitter.com/{{ it.user.screen_name }}/status/{{it.id}}"</a>
+              </li>
 
-    <!-- Testimonials -->
-    <section class="testimonials text-center bg-light">
-      <div class="container">
-        <h2 class="mb-5">Our Team</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="https://tanjany.github.io/GWU-Bootcamp-Project02/img/testimonials-1.jpg" alt="">
-              <h5>Tanja Nyberg</h5>
-              
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="https://tanjany.github.io/GWU-Bootcamp-Project02/img/testimonials-2.jpg" alt="">
-              <h5>Haiyan Richter</h5>
-              
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="/https://tanjany.github.io/GWU-Bootcamp-Project02/img/testimonials-3.jpg" alt="">
-              <h5>Melizanne Santos-Abanilla</h5>
-              
-            </div>
+              {% endfor %}
+            </p>
+             </ul>
+           <!-- <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>-->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- Testimonials 
+    <section class="testimonials text-center lg-light">
+      <div class="container">
+        <h6 class="mb-">About me</h6>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                <img src="{{ url_for('static', filename = 'img/testimoni.jpg') }}" width="130" height="200" alt="mypic" title="myPic" border="3">   
+              <h5>Tanja Nyberg</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+        </div>  
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action 
     <section class="call-to-action text-white text-center">
       <div class="overlay"></div>
       <div class="container">

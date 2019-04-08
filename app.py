@@ -62,12 +62,12 @@ def scrape_tweets():
     
      # Run scraped functions
     
-   # url='https://tanjany.github.io/GWU-Bootcamp-Project02'
+   url='https://statairport.herokuapp.com/'
     
     
      # Redirect back to home page 
    # return redirect(url, code=307)
-    return redirect("http://localhost:5000/", code=302)
+    return redirect(url, code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)

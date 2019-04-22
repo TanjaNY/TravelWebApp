@@ -15,6 +15,7 @@ from config import (database_user,
 #Open your browser. Go to http://127.0.0.1:5000/
 
 # create instance of Flask app
+url='https://statairport.herokuapp.com/scrape'
 app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
@@ -61,12 +62,12 @@ def scrape_tweets():
     
     
      # Run scraped functions
-url='https://statairport.herokuapp.com/'
+
     
     
      # Redirect back to home page 
    # return redirect(url, code=307)
-return redirect(url, code=302)
+   return redirect(url, code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)

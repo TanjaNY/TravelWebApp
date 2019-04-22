@@ -142,13 +142,16 @@
           
         <div class="col-lg-12 order-lg-1 my-auto showcase-text">
           <div class="container-fluid">     
-            <h2>What people are talking about</h2>
+            <h2>What people are tweeting about from DC Airports?</h2>
+            <br>
             <ul style="list-style: none;">
-                <p class="lead mb-0"> {% for it in docs %}
-             <li> Twitted at {{ it.created_at }} 
+                <p class="lead mb-0">
+                  {% for it in docs %}
+             <li> <a href ="https://twitter.com/{{ it.user.screen_name }}/status/{{it.id}}"</a>
+                 Twitted at {{ it.created_at }} 
                 <br>Twitter user {{ it.user.screen_name }} from {{ it.user.location }} writes : 
                 <br><p> <b> {{ it.full_text }} </b></p>
-                <a href ="https://twitter.com/{{ it.user.screen_name }}/status/{{it.id}}"</a>
+                <!--a href ="https://twitter.com/{{ it.user.screen_name }}/status/{{it.id}}"</a-->
               </li>
 
               {% endfor %}

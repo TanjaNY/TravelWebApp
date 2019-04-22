@@ -61,8 +61,7 @@ def scrape_tweets():
     
     
      # Run scraped functions
-    
-   url='https://statairport.herokuapp.com/'
+url='https://statairport.herokuapp.com/'
     
     
      # Redirect back to home page 

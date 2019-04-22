@@ -59,7 +59,7 @@ def scrape_tweets():
     
     #entries = mongo.db.mission_to_mars
     tweet_info = mongo.db.tweets.scrape_tweets()
-    
+    url='https://statairport.herokuapp.com/scrape'
     
      # Run scraped functions
 

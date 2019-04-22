@@ -67,7 +67,7 @@ def scrape_tweets():
     
      # Redirect back to home page 
    # return redirect(url, code=307)
-   return redirect(url, code=302)
+    return redirect( url, code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)

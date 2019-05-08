@@ -150,7 +150,7 @@
             <ul style="list-style: none;">
                 <p class="lead mb-0">
                   {% for it in docs %}
-             <li> <a href ="https://twitter.com/{{ it.user.screen_name }}/status/{{it.id}}"</a>
+             <li> <a href ="https://twitter.com/{{ it.user.screen_name }}/status/{{it.id}}" target="_blank"</a>
                  Twitted at {{ it.created_at }} 
                 <br>Twitter user {{ it.user.screen_name }} from {{ it.user.location }} writes : 
                 <br><p> <b> {{ it.full_text }} </b></p>
